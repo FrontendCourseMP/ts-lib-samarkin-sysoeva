@@ -3,18 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ts-val</title>
+    <title>Веб-разработка</title>
   </head>
   <body>
-    <main>
-      <section>
-        <form novalidate>
-          <label>Имя <input type="text" required></label>
-          <p role="alert" aria-live="assertive"></p>
-          <button type="submit">Отправить</button>
-        </form>
-      </section>
+    <main class="wrap">
+      <div class="grid">
+        <!-- Регистрация -->
+        <section class="card">
+          <h2>Регистрация</h2>
+          <p>Создание нового аккаунта</p>
+
+          <form id="register-form">
+            <div class="field">
+              <label for="reg-email">Email</label>
+              <input
+                id="reg-email"
+                name="email"
+                type="email"
+                required
+                aria-describedby="reg-email-error"
+              />
+              <span id="reg-email-error" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="reg-password">Пароль</label>
+              <input
+                id="reg-password"
+                name="password"
+                type="text"
+                required
+                minlength="6"
+                maxlength="32"
+                aria-describedby="reg-password-error"
+              />
+              <span id="reg-password-error" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="reg-age">Возраст</label>
+              <input
+                id="reg-age"
+                name="age"
+                type="number"
+                min="18"
+                max="99"
+                required
+                aria-describedby="reg-age-error"
+              />
+              <span id="reg-age-error" class="hint"></span>
+            </div>
+
+            <button type="submit">Зарегистрироваться</button>
+          </form>
+        </section>
+
+        <!-- Авторизация -->
+        <section class="card">
+          <h2>Авторизация</h2>
+          <p>Вход в существующий аккаунт</p>
+
+          <form id="login-form">
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input
+                id="login-email"
+                name="email"
+                type="email"
+                required
+                aria-describedby="login-email-error"
+              />
+              <span id="login-email-error" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="login-password">Пароль</label>
+              <input
+                id="login-password"
+                name="password"
+                type="text"
+                required
+                minlength="6"
+                aria-describedby="login-password-error"
+              />
+              <span id="login-password-error" class="hint"></span>
+            </div>
+
+            <button type="submit">Войти</button>
+          </form>
+        </section>
+
+        <!-- Обратная связь -->
+        <section class="card">
+          <h2>Обратная связь</h2>
+          <p>Короткое сообщение администратору</p>
+
+          <form id="feedback-form">
+            <div class="field">
+              <label for="fb-name">Имя</label>
+              <input
+                id="fb-name"
+                name="name"
+                type="text"
+                required
+                minlength="2"
+                maxlength="40"
+                aria-describedby="fb-name-error"
+              />
+              <span id="fb-name-error" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="fb-email">Email</label>
+              <input
+                id="fb-email"
+                name="email"
+                type="email"
+                required
+                aria-describedby="fb-email-error"
+              />
+              <span id="fb-email-error" class="hint"></span>
+            </div>
+
+            <div class="field">
+              <label for="fb-code">Код заявки</label>
+              <input
+                id="fb-code"
+                name="code"
+                type="text"
+                pattern="[A-Z]{3}-\d{3}"
+                required
+                aria-describedby="fb-code-error"
+              />
+              <span id="fb-code-error" class="hint"></span>
+            </div>
+
+            <button type="submit">Отправить</button>
+          </form>
+        </section>
+      </div>
     </main>
-    <script type="module" src="/src/main.ts"></script>
+    <script src="src/main.ts" type="module"></script>
   </body>
 </html>

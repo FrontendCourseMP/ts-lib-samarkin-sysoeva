@@ -1,1 +1,2 @@
-// Точка входа в ваше решение
+import * as s from "./core";
+import "./styles.css";
